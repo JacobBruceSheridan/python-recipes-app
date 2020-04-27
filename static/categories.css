@@ -1,0 +1,42 @@
+.card{
+    width: 320px;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.category-button{
+    visibility: hidden;
+}
+
+#root {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 600px) {
+    #root {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        transform: scale(0.9);
+        transition: 0.5s ease-in-out;
+    }
+
+    .card:hover{
+        transform: scale(1.1);
+    }
+
+}
+
+@media (max-width: 600px){
+    .card{
+        width: 100%;
+    }
+    #root{
+        text-align: center;
+    }
+}

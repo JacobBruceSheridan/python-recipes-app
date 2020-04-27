@@ -1,0 +1,12 @@
+.search-container{
+    align-content: center;
+    justify-content: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-top: 25vh;
+    text-align: center;
+}
+
+#search-query{
+    text-align: center;
+}

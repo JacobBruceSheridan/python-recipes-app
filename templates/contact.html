@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/d0410989a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/nav.css">
+</head>
+
+<body>
+
+    <nav class="green darken-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><i id="python-logo" class="fab fa-python"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <i class="fas fa-search"></i>
+                </li>
+                <li>
+                    <form class="search-form" action="/searchRecipes" method="POST">
+
+                        <input id="search" name="search-query" type="search" autocomplete="off"
+                            placeholder="Search recipes">
+                    </form>
+                </li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Recipes</a></li>
+                <li><a href="/archived"><i class="fas fa-archive"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <form class="search-form" action="/searchRecipes" method="POST">
+                <input id="search" name="search-query" type="search" autocomplete="off" placeholder="Search recipes">
+            </form>
+        </li>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/categories"><i class="fas fa-utensils"></i>Recipes</a></li>
+        <li><a href="/archived"><i class="fas fa-archive"></i>Archived</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <div class="container">
+                    <form action="/contactEmail" method="POST">
+                        <div class="input-field">
+                            <input id="name" type="text" name="name" class="validate" autocomplete="off">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input id="email" type="Email" name="email" class="validate" autocomplete="off">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="message" name="message" class="materialize-textarea" value=""></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <div class="center-align">
+                            <button class="waves-effect waves-light btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col l6 s12">
+                <h1 class="center-align">Thank you!</h1>
+                <p class="flow-text center-align">Thank you for reaching out. I will be in contact as soon as possible.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer green darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-4">This application is a student project built using the
+                        <a class="grey-text text-lighten-1" target="_blank"
+                            href="https://www.themealdb.com/api.php">Meal DB</a> web
+                        API.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Support</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="/faq">FAQ</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Jacob Bruce
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="static/sidenav.js"></script>
+
+</html>

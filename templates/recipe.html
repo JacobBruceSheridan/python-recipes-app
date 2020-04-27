@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{recipe.name}}</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/d0410989a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/nav.css">
+    <link rel="stylesheet" href="static/recipe.css">
+</head>
+
+<body>
+
+    <nav class="green darken-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><i id="python-logo" class="fab fa-python"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <i class="fas fa-search"></i>
+                </li>
+                <li>
+                    <form class="search-form" action="/searchRecipes" method="POST">
+
+                        <input id="search" name="search-query" type="search" autocomplete="off"
+                            placeholder="Search recipes">
+                    </form>
+                </li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Recipes</a></li>
+                <li><a href="/archived"><i class="fas fa-archive"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <form class="search-form" action="/searchRecipes" method="POST">
+                <input id="search" name="search-query" type="search" autocomplete="off" placeholder="Search recipes">
+            </form>
+        </li>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/categories"><i class="fas fa-utensils"></i>Recipes</a></li>
+        <li><a href="/archived"><i class="fas fa-archive"></i>Archived</a></li>
+    </ul>
+
+    <a href="javascript:history.back()" id="go-back"> <button class="waves-effect waves-light btn green darken-1">Go
+            Back</button></a>
+
+    <div class="recipe-body">
+        <div class="recipe-header">
+            <img class="recipe-image" src="{{recipe.image}}" alt="">
+            <div class="recipe-title-container">
+                <h1 class="recipe-title">{{recipe.name}}</h1>
+                <a target="_blank" href="{{recipe.youtube}}"><button class="waves-effect waves-light btn red">Watch On
+                        Youtube</button></a>
+            </div>
+        </div>
+
+        <div class="ingredients-container">
+            <h3>Ingredients</h3>
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                <li class="flow-text">{{ingredient}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="instructions-container">
+            <h3>Directions</h3>
+            <p class="flow-text">{{recipe.instructions}}</p>
+        </div>
+
+        <form method="POST" action="/archiveCurrentRecipe">
+            <input type="hidden" name="recipeId" value="{{recipe.id}}" />
+            <input type="hidden" name="recipeName" value="{{recipe.name}}" />
+            <input type="hidden" name="recipeImage" value="{{recipe.image}}" />
+            <input type="hidden" name="recipeIngredients" value="{{recipe.ingredients}}" />
+            <button id="archiveBtn" class="waves-effect waves-light btn">Archive</button>
+        </form>
+
+    </div>
+
+    <footer class="page-footer green darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-4">This application is a student project built using the
+                        <a class="grey-text text-lighten-1" target="_blank"
+                            href="https://www.themealdb.com/api.php">Meal DB</a> web
+                        API.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Support</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="/faq">FAQ</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Jacob Bruce
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="static/sidenav.js"></script>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/d0410989a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/nav.css">
+    <link rel="stylesheet" href="static/index.css">
+</head>
+
+<body>
+
+    <nav class="green darken-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><i id="python-logo" class="fab fa-python"></i></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <i class="fas fa-search"></i>
+                </li>
+                <li>
+                    <form class="search-form" action="/searchRecipes" method="POST">
+
+                        <input id="search" name="search-query" type="search" autocomplete="off"
+                            placeholder="Search recipes">
+                    </form>
+                </li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/categories">Recipes</a></li>
+                <li><a href="/archived"><i class="fas fa-archive"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <form class="search-form" action="/searchRecipes" method="POST">
+                <input id="search" name="search-query" type="search" autocomplete="off" placeholder="Search recipes">
+            </form>
+        </li>
+        <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="/categories"><i class="fas fa-utensils"></i>Recipes</a></li>
+        <li><a href="/archived"><i class="fas fa-archive"></i>Archived</a></li>
+    </ul>
+
+    <!-- <div class="container"> -->
+    <!-- <div class="row">
+        <div class="col s12 l6 center-align" id="left-col">
+            <div class="container valign-wrapper">
+                <h3>
+                    Browse through a collection of recipe and save the ones you like. <br>
+                    <a href="/categories"> <button class="waves-effect waves-light btn green darken-1">View
+                            Recipes</button></a>
+                </h3>
+            </div>
+        </div>
+        <div class="col s12 l6 center-align">
+            <img src="static/images/image.jpg" alt="">
+        </div>
+    </div> -->
+    <!-- </div> -->
+    <div class="parallax-container">
+        <div class="parallax"><img src="static/images/salmon.jpg"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h3 class="center-align">
+                Browse through a collection of recipe and save the ones you like. Then email the ingredients in a
+                shopping list format for convenience when shopping <br>
+                <a href="/categories"> <button class="waves-effect waves-light btn green darken-1">View
+                        Recipes</button></a>
+            </h3>
+        </div>
+    </div>
+
+    <footer class="page-footer green darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-4">This application is a student project built using the
+                        <a class="grey-text text-lighten-1" target="_blank"
+                            href="https://www.themealdb.com/api.php">Meal DB</a> web
+                        API.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Support</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="/faq">FAQ</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Jacob Bruce
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="static/sidenav.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems);
+    });
+</script>
+
+</html>
